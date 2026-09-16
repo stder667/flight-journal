@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1e4d3b">
+<title>飞行手账 · Flight Journal</title>
+  <script type="module" crossorigin src="/assets/index-GfCyBLKN.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BzByZVfM.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">✈</span>
+    <span class="brand-text">飞行手账<small>FLIGHT JOURNAL</small></span>
+  </div>
+  <nav class="tabs">
+    <button class="tab active" data-page="home">首页</button>
+    <button class="tab" data-page="map">地图</button>
+    <button class="tab" data-page="timeline">足迹</button>
+    <button class="tab" data-page="stats">统计</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ 首页 ============ -->
+  <section id="page-home" class="page active">
+    <div class="cover">
+      <div class="cover-stamp" id="cover-stamp">755<br>次飞行</div>
+      <p class="cover-kicker">PERSONAL FLIGHT ARCHIVE · 2011 — 2026</p>
+      <h1 class="cover-title">我的<span class="red">飞行手账</span></h1>
+      <p class="cover-sub" id="cover-range"></p>
+      <div class="cover-tape"></div>
+    </div>
+
+    <div class="stat-grid" id="stat-grid"></div>
+
+    <div class="beat-card">
+      <div class="beat-left">
+        <p class="beat-label">飞行力排名 · 估算</p>
+        <p class="beat-num"><span id="beat-pct">--</span><small>%</small></p>
+        <p class="beat-desc">你的年均飞行次数，估计超过了全国飞友中的</p>
+      </div>
+      <div class="beat-badge">战胜<br>全国飞友</div>
+    </div>
+
+    <div class="section-head">
+      <h2>最常去的城市</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="city-chips" id="city-chips"></div>
+
+    <div class="section-head">
+      <h2>航线预览</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="mini-map" id="mini-map"></div>
+    <p class="hint">点开「地图」页，可以点按城市查看放射航线 →</p>
+  </section>
+
+  <!-- ============ 地图 ============ -->
+  <section id="page-map" class="page">
+    <div class="map-toolbar">
+      <button id="map-back" class="ghost-btn hidden">← 返回全球视图</button>
+      <span id="map-title" class="map-title">全球航线图</span>
+    </div>
+    <div id="world-map" class="world-map"></div>
+    <p class="hint" id="map-hint">拖动缩放地图 · 点击发光城市，查看以它为中心的航线</p>
+  </section>
+
+  <!-- ============ 足迹 ============ -->
+  <section id="page-timeline" class="page">
+    <div id="timeline"></div>
+  </section>
+
+  <!-- ============ 统计 ============ -->
+  <section id="page-stats" class="page">
+    <div class="section-head"><h2>年度飞行趋势</h2><span class="section-line"></span></div>
+    <div class="chart-card"><div id="chart-year" class="chart"></div></div>
+
+    <div class="section-head"><h2>哪个月最爱飞</h2><span class="section-line"></span></div>
+    <div class="chart-card"><div id="chart-month" class="chart"></div></div>
+
+    <div class="stat-grid two" id="hour-grid"></div>
+
+    <div class="section-head"><h2>最常飞的航线 TOP</h2><span class="section-line"></span></div>
+    <div class="chart-card"><div id="chart-route" class="chart"></div></div>
+
+    <div class="section-head"><h2>国家/地区足迹</h2><span class="section-line"></span></div>
+    <div class="country-list" id="country-list"></div>
+  </section>
+
+</main>
+
+<footer class="foot">数据来自航旅纵横行程导出 · 本页面仅在本地展示，不上传任何数据</footer>
+
+<script src="./vendor/echarts.min.js"></script>
+</body>
+</html>
